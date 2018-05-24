@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple File Server</title>
+</head>
+<body>
+    <h1>Hello, {{ user }}</h1>
+    <a href="http://localhost:5000/logout">Logout</a>
+    <a href="http://localhost:5000/upload">Upload</a>
+
+
+    {% if files %}
+
+        <h2>Files: </h2>
+        <ul>
+        {% for file in files %}
+            <li><a href="http://localhost:5000/files/{{ file }}">{{ file }}</a>
+             <a href="http://localhost:5000/delete/{{ file }}">delete</a></li>
+        {% endfor %}
+        </ul>
+
+    {% endif %}
+</body>
+</html>
